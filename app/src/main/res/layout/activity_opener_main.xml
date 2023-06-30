@@ -2,30 +2,47 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bViewModel"
+            type="com.example.myapplication.opener.OpenerActivityViewModel" />
+    </data>
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".opener.OpenerActivity"
     android:orientation="vertical">
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:tabGravity="fill"
-            app:tabMode="fixed" />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <Button
+        android:id="@+id/actionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:layout_gravity="center"
+        android:text="@{bViewModel.btnName}"
+        />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_gravity="bottom"
+        app:tabInlineLabel="true"
+        app:tabTextColor="@color/teal_700"
+        app:tabIndicatorColor="@color/teal_700"
+        app:tabSelectedTextColor="@color/teal_700"
+        app:tabTextAppearance="@style/TextAppearance.AppCompat.Small"
+        />
 
 </LinearLayout>
 </layout>
