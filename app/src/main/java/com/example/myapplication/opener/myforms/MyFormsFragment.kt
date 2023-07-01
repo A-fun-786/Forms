@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.opener.OpenerActivityViewModel
 
@@ -32,6 +34,7 @@ class MyFormsFragment : Fragment(),OpenerActivityViewModel.viewModelImpl {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -42,6 +45,12 @@ class MyFormsFragment : Fragment(),OpenerActivityViewModel.viewModelImpl {
         return inflater.inflate(R.layout.fragment_my_forms, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val formRecyclerView = view.findViewById<RecyclerView>(R.id.form_recyclerView)
+        formRecyclerView.layoutManager = GridLayoutManager(this.context,2)
+        formRecyclerView.adapter = FormRecyclerViewAdapter()
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of
