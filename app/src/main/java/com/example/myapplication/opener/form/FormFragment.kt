@@ -1,4 +1,4 @@
-package com.example.myapplication.opener.quiz
+package com.example.myapplication.opener.form
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.opener.OpenerActivityViewModel
 
@@ -16,10 +18,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [QuizFragment.newInstance] factory method to
+ * Use the [FormFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class QuizFragment : Fragment(),OpenerActivityViewModel.viewModelImpl {
+class FormFragment : Fragment(),OpenerActivityViewModel.viewModelImpl {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -37,7 +39,7 @@ class QuizFragment : Fragment(),OpenerActivityViewModel.viewModelImpl {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quiz, container, false)
+        return inflater.inflate(R.layout.fragment_form, container, false)
     }
 
     companion object {
@@ -52,7 +54,7 @@ class QuizFragment : Fragment(),OpenerActivityViewModel.viewModelImpl {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            QuizFragment().apply {
+            FormFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -60,7 +62,14 @@ class QuizFragment : Fragment(),OpenerActivityViewModel.viewModelImpl {
             }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.form_recyclerview)
+        recyclerView.layoutManager = LinearLayoutManager(this.context)
+        recyclerView.adapter = FormRecyclerViewAdapter()
+    }
+
     override fun handleActionButton(button: Button) {
-        button.setText("Quiz")
+        button.setText("form")
     }
 }

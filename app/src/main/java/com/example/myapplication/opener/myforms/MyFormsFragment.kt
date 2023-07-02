@@ -2,7 +2,6 @@ package com.example.myapplication.opener.myforms
 
 import android.graphics.Color
 import android.os.Bundle
-import android.provider.CalendarContract.Colors
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -47,7 +46,7 @@ class MyFormsFragment : Fragment(),OpenerActivityViewModel.viewModelImpl {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val formRecyclerView = view.findViewById<RecyclerView>(R.id.form_recyclerView)
+        val formRecyclerView = view.findViewById<RecyclerView>(R.id.my_form_recyclerView)
         formRecyclerView.layoutManager = GridLayoutManager(this.context,2)
         formRecyclerView.adapter = FormRecyclerViewAdapter()
     }
@@ -72,8 +71,13 @@ class MyFormsFragment : Fragment(),OpenerActivityViewModel.viewModelImpl {
     }
 
     override fun handleActionButton(button: Button) {
+        handleButtonView(button)
+
+    }
+
+    private fun handleButtonView(button: Button) {
         button.setBackgroundColor(Color.BLACK)
-        button.setText("My Forms")
+        button.setText(R.string.create_form)
     }
 
 

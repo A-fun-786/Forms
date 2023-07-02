@@ -15,6 +15,7 @@ class OpenerViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         fragments.add(fragment)
         fragmentsTitle.add(title)
     }
+
     override fun getCount(): Int {
         return fragments.size
     }

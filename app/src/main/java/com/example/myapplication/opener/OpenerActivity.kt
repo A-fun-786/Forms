@@ -3,11 +3,12 @@ package com.example.myapplication.opener
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityOpenerMainBinding
 import com.example.myapplication.opener.myforms.*
-import com.example.myapplication.opener.quiz.*
+import com.example.myapplication.opener.form.*
 import com.example.myapplication.opener.response.*
 import com.example.myapplication.opener.settings.*
 
@@ -27,8 +28,8 @@ class OpenerActivity : AppCompatActivity(), OnPageChangeListener{
         binding.lifecycleOwner = this
 
         viewPagerAdapter.apply {
+            add(FormFragment(),"Form")
             add(MyFormsFragment(),"My Forms")
-            add(QuizFragment(),"Quiz")
             add(ResponseFragment(),"Response")
             add(SettingsFragment(),"Settings")
         }
@@ -46,8 +47,8 @@ class OpenerActivity : AppCompatActivity(), OnPageChangeListener{
 
     override fun onPageSelected(position: Int) {
         when(position) {
+            viewModel.FORM -> viewModelImpl = FormFragment()
             viewModel.MY_FORMS -> viewModelImpl = MyFormsFragment()
-            viewModel.QUIZ -> viewModelImpl = QuizFragment()
             viewModel.RESPONSE -> viewModelImpl = ResponseFragment()
             viewModel.SETTINGS -> viewModelImpl = SettingsFragment()
         }
