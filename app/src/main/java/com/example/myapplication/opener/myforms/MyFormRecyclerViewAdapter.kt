@@ -26,5 +26,5 @@ class FormRecyclerViewAdapter: RecyclerView.Adapter<FormViewHolder>() {
 
 class FormViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
     val textView = view.findViewById<TextView>(R.id.text_view)
-    val formTemplate = view.findViewById<ImageView>(R.id.form_template)
+    val formTemplate = view.findViewById<ImageView>(R.id.question)
 }

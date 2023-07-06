@@ -3,6 +3,7 @@ package com.example.myapplication.opener.form
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -25,6 +26,5 @@ class FormRecyclerViewAdapter: RecyclerView.Adapter<QuestionViewHolder>() {
 }
 
 class QuestionViewHolder(view: View) : RecyclerView.ViewHolder(view){
-    val textView = view.findViewById<TextView>(R.id.text_view)
-    val formTemplate = view.findViewById<ImageView>(R.id.form_template)
+    val formTemplate = view.findViewById<EditText>(R.id.question)
 }
