@@ -66,7 +66,7 @@ class FormFragment : Fragment(),OpenerActivityViewModel.viewModelImpl {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView = view.findViewById<RecyclerView>(R.id.form_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this.context)
-        recyclerView.adapter = FormRecyclerViewAdapter()
+        recyclerView.adapter = FormRecyclerViewAdapter(activity = activity)
     }
 
     override fun handleActionButton(button: Button) {

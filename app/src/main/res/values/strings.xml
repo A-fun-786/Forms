@@ -5,4 +5,5 @@
     <string name="create_form">Create Form</string>
     <string name="title">Title</string>
     <string name="form_description">Form description here</string>
+    <string name="untitled_question">Untitled question</string>
 </resources>

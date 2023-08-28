@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
+import android.widget.Toast
 import com.example.myapplication.R
 import com.example.myapplication.opener.OpenerActivityViewModel
 
@@ -37,7 +41,30 @@ class ResponseFragment : Fragment(), OpenerActivityViewModel.viewModelImpl {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_response, container, false)
+        var responseView = inflater.inflate(R.layout.fragment_response, container, false)
+        val spinner = responseView.findViewById<Spinner>(R.id.response_spiner)
+        val dataList = arrayListOf("first","Second","Third")
+        val spinnerAdapter = activity?.applicationContext?.let {
+            ArrayAdapter(
+                it,
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
+                dataList)
+        }
+        spinnerAdapter?.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = spinnerAdapter
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, view: View?, i: Int, l: Long) {
+                val selectedItem = adapterView.getItemAtPosition(i) as String
+                Toast.makeText(activity,selectedItem,Toast.LENGTH_LONG).show()
+                // Perform any actions based on the selected item
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {
+                // Handle case where no item is selected
+            }
+        }
+        return responseView
     }
 
     companion object {

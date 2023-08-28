@@ -1,0 +1,7 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item > <!-- Adjust bottom and margins as needed -->
+        <shape android:shape="oval">
+            <stroke android:width="2dp" android:color="@color/black" /> <!-- Change width and color as needed -->
+        </shape>
+    </item>
+</layer-list>
