@@ -77,22 +77,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-
-<!--        <androidx.appcompat.widget.AppCompatEditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/title"-->
-<!--            android:layout_margin="8dp"-->
-<!--            android:textSize="24dp"-->
-<!--            />-->
-<!--        <androidx.appcompat.widget.AppCompatEditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/form_description"-->
-<!--            android:layout_margin="4dp"-->
-<!--            android:textSize="12dp"-->
-<!--            android:padding="8dp"-->
-<!--            />-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/form_recyclerview"
             android:layout_width="match_parent"

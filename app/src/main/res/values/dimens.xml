@@ -4,5 +4,9 @@
     <dimen name="std_margin">8dp</dimen>
     <dimen name="std_24">24dp</dimen>
     <dimen name="std_12">12dp</dimen>
+    <dimen name="std_8">8dp</dimen>
+    <dimen name="std_4">6dp</dimen>
     <dimen name="std_margin_2">16dp</dimen>
+    <dimen name="std_margin_4">32dp</dimen>
+    <dimen name="std_margin_6">48dp</dimen>
 </resources>

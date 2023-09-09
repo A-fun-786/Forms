@@ -6,4 +6,10 @@
     <string name="title">Title</string>
     <string name="form_description">Form description here</string>
     <string name="untitled_question">Untitled question</string>
+    <string name="image">Add Image</string>
+    <string name="video">Add Video</string>
+    <string name="upload_files">Upload Files</string>
+    <string name="mcq">MCQ</string>
+    <string name="short_answer">Short Answer</string>
+    <string name="long_answer">Long Answer</string>
 </resources>
